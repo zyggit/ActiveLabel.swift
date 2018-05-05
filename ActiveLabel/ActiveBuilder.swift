@@ -88,6 +88,7 @@ struct ActiveBuilder {
             }
             else if word.hasPrefix("#") {
                 word.remove(at: word.startIndex)
+                word.remove(at: word.index(before: word.endIndex))
             }
 
             if filterPredicate?(word) ?? true {
