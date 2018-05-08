@@ -90,6 +90,9 @@ struct ActiveBuilder {
                 word.remove(at: word.index(before: word.endIndex))
                 word.remove(at: word.startIndex)
             }
+            else if word.hasSuffix("#") {
+                word.remove(at: word.index(before: word.endIndex))
+            }
 
             if filterPredicate?(word) ?? true {
                 let element = ActiveElement.create(with: type, text: word)
